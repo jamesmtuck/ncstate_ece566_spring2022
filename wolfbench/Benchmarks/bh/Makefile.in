@@ -16,7 +16,7 @@ all: $(addsuffix $(EXTRA_SUFFIX),$(programs))
 
 install: all
 
-DEFS    = -U__GNUC__ -D_NO_LONGLONG
+DEFS    = -D__GNUC__ -D_NO_LONGLONG
 
 SOURCES = newbh.c util.c args.c
 

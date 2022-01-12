@@ -16,7 +16,7 @@ all: $(addsuffix $(EXTRA_SUFFIX),$(programs))
 
 install: all
 
-DEFS    = -U__GNUC__ -D_NO_LONGLONG -DPLAIN -DOLDEN
+DEFS    = -D__GNUC__ -D_NO_LONGLONG -DPLAIN -DOLDEN
 
 SOURCES = adpcm.c rawdaudio.c
 

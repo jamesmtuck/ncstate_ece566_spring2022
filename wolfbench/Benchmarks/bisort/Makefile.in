@@ -16,7 +16,7 @@ all:  $(addsuffix $(EXTRA_SUFFIX),$(programs))
 
 install: all 
 
-DEFS    = -U__GNUC__ -D_NO_LONGLONG -DNOTESTP -DONEONLY
+DEFS    = -D__GNUC__ -D_NO_LONGLONG -DNOTESTP -DONEONLY
 
 SOURCES = swap.c bitonic.c args.c
 
