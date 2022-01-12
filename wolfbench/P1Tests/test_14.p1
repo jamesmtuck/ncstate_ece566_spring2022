@@ -1,0 +1,5 @@
+(setf (aref arg_array 0) (aref arg_array (+ arg_size (- 1))))
+(setf (aref arg_array 1) (aref arg_array (+ arg_size (- 2))))
+(setf (aref arg_array 2) (aref arg_array (+ arg_size (- 3))))
+(setf (aref arg_array 3) (aref arg_array (+ arg_size (- 4))))
+(- 0)

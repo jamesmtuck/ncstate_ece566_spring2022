@@ -1,0 +1,41 @@
+
+.SUFFIXES: .tune.bc .opt.bc .link.bc .bc
+.PRECIOUS: .tune.bc
+
+.PHONY: %-install %-build
+
+ifdef QUIET
+VERB:=@
+else
+VERB:=
+endif
+
+%: %.all.bc
+	$(VERB) $(CLANG) $(LIBS) $(HEADERS) -o $@ $^
+
+%.all.bc: main.bc %.p1.bc
+	$(VERB) $(LLVM_LINK) -o $@ $^	  
+
+%.p1.bc:%.p1
+ifdef DEBUG
+	lldb -- $(P1TOOL) $< $@
+else
+	$(VERB) $(P1TOOL) $< $@
+endif
+
+clean:
+	$(VERB) rm -Rf *.bc $(programs) *-test *.ll main.o
+
+%-test:
+	$(VERB) ./$* $(SRC_DIR)/$(addsuffix .data,$*) > $@ 
+
+%-install:
+	$(VERB) mkdir -p $(INSTALL_DIR)
+	$(VERB) cp $* $(INSTALL_DIR)/$*$(EXTRA_SUFFIX)
+	$(VERB) echo [installed $*$(EXTRA_SUFFIX)]
+
+
+%-build:
+	$(VERB) $(P1TOOL)  $(SRC_DIR)/$(addsuffix .p1,$*) $(addsuffix .bc,$*)
+	llvm-dis $(addsuffix .bc,$*)
+	$(VERB) $(CLANG) $(LIBS) $(HEADERS) -Dfunc_to_call=$* -o $* $(SRC_DIR)/main.c $(addsuffix .bc,$*)

@@ -1,0 +1,2 @@
+(setf (aref arg_array 0) 1)
+(+ 0)

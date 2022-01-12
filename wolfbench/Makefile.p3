@@ -1,0 +1,12 @@
+.PHONY: all licm mlicm mclicm
+
+all: licm mlicm mclicm
+
+licm:
+	make EXTRA_SUFFIX=.LICM CUSTOMFLAGS="-verbose"
+
+mlicm:
+	make EXTRA_SUFFIX=.MLICM CUSTOMFLAGS="-verbose -mem2reg"
+
+mclicm:
+	make EXTRA_SUFFIX=.MCLICM CUSTOMFLAGS="-verbose -mem2reg -cse"

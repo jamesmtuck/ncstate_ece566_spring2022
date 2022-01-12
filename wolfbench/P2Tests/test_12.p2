@@ -1,0 +1,18 @@
+int *test_12(int *x, int *y)
+{
+  int *ret;
+  ret = inttoptr(0);
+
+  if (x!=inttoptr(0)) {
+     if (y!=inttoptr(0)) {
+         if (*x > *y) {
+            ret = x;
+         } else {
+            ret = y;
+         }       
+     } else ret = y;
+  } else ret = y;
+
+  return ret;
+}
+
