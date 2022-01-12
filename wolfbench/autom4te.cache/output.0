@@ -1778,8 +1778,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "clang-11", so it can be a program name with args.
-set dummy clang-11; ac_word=$2
+# Extract the first word of "clang-13", so it can be a program name with args.
+set dummy clang-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_CLANG+:} false; then :
@@ -1819,8 +1819,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "clang++-11", so it can be a program name with args.
-set dummy clang++-11; ac_word=$2
+# Extract the first word of "clang++-13", so it can be a program name with args.
+set dummy clang++-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_CLANGXX+:} false; then :
@@ -1860,8 +1860,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "opt-11", so it can be a program name with args.
-set dummy opt-11; ac_word=$2
+# Extract the first word of "opt-13", so it can be a program name with args.
+set dummy opt-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_OPT+:} false; then :
@@ -1901,8 +1901,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "llvm-link-11", so it can be a program name with args.
-set dummy llvm-link-11; ac_word=$2
+# Extract the first word of "llvm-link-13", so it can be a program name with args.
+set dummy llvm-link-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_LLVM_LINK+:} false; then :
@@ -1942,8 +1942,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "llvm-dis-11", so it can be a program name with args.
-set dummy llvm-dis-11; ac_word=$2
+# Extract the first word of "llvm-dis-13", so it can be a program name with args.
+set dummy llvm-dis-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_LLVM_DIS+:} false; then :
@@ -1983,8 +1983,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "llvm-config-11", so it can be a program name with args.
-set dummy llvm-config-11; ac_word=$2
+# Extract the first word of "llvm-config-13", so it can be a program name with args.
+set dummy llvm-config-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_LLVM_CONFIG+:} false; then :
@@ -2024,8 +2024,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "llc-11", so it can be a program name with args.
-set dummy llc-11; ac_word=$2
+# Extract the first word of "llc-13", so it can be a program name with args.
+set dummy llc-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_LLC+:} false; then :
@@ -2065,8 +2065,8 @@ $as_echo "no" >&6; }
 fi
 
 
-# Extract the first word of "llvm-as-11", so it can be a program name with args.
-set dummy llvm-as-11; ac_word=$2
+# Extract the first word of "llvm-as-13", so it can be a program name with args.
+set dummy llvm-as-13; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_path_LLVMAS+:} false; then :
