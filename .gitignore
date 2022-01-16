@@ -1,5 +1,11 @@
+#Emacs
+*~
+
 # Prerequisites
 *.d
+
+# CLion/CMake
+*.idea
 
 # Compiled Object files
 *.slo
