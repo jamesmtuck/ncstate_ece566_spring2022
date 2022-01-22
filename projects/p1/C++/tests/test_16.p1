@@ -1,0 +1,6 @@
+in x,y
+xinv = expand (x31)
+yinv = expand (y31)
+absx = (x ^ xinv) + x31
+absy = (y ^ yinv) + y31
+final (absx - absy)*(absx-absy)

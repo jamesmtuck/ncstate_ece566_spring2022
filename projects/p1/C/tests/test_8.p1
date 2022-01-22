@@ -1,0 +1,4 @@
+in x, y
+z = x * y % 115
+z = z / 7
+final z+1,1

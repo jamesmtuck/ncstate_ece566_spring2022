@@ -1,0 +1,3 @@
+in d, syn
+d[syn] = !d[syn]
+final d
