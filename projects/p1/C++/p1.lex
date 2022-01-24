@@ -27,7 +27,7 @@ using namespace llvm;
 
 %}
 
-//%option debug
+   //%option debug
 
 %%
 
