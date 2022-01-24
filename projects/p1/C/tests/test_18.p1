@@ -1,0 +1,4 @@
+in a
+slice x[4]:8
+b = a.x
+final b

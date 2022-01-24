@@ -1,0 +1,8 @@
+in x
+// lc-3 instruction format
+slice a:10,b:9,c:8,d:7,e:6,f:5,g:4,h:3,i:2,j:1,k:0
+x.a = 1
+x.e = 1
+x.g = 1
+x.j = 0
+final x

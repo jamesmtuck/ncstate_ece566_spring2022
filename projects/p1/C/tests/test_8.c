@@ -4,7 +4,8 @@ int test_8(int x, int y);
 
 int test_8_tester(int x, int y)
 {
-  return (((x*y%115) / 7)+1)*2 + 1;
+  int ret =  (((x*y%115) / 7));
+  return ((ret & 0x3F)<<1) | 3;
 }
 
 int main()

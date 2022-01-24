@@ -1,3 +1,5 @@
 in a
-b1 = a
-final a
+slice a, b, c
+// used invalid struct
+b1 = a . d
+final b

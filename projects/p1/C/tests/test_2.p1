@@ -1,3 +1,4 @@
 in none
-a = 1,0,1
-final a
+a = {1,0,1}
+final {a0,a1,a2}
+

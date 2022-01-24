@@ -1,0 +1,10 @@
+in none
+// lc-3 instruction format
+slice op[4]:12,cc[3]:9,dest[9]:0
+slice n:2,z:1,p:0
+p.op = 8
+p.cc.z = 1
+p.cc.n = 1
+p.cc.p = 1
+p.dest = 255 + 256
+final p

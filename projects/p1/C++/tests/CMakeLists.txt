@@ -9,7 +9,7 @@ p1_failure(fail_1)
 p1_failure(fail_2)
 p1_failure(fail_3)
 p1_failure(fail_4)
-
+p1_failure(fail_5)
 
 add_executable(llvm-inst-count llvm-inst-count.cpp)
 target_link_libraries(llvm-inst-count ${llvm_libs})
@@ -29,7 +29,7 @@ function(p1_test name class result)
       )
    add_custom_command(
       OUTPUT ${name}.bc.o
-      COMMAND clang-11 -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
+      COMMAND ${CMAKE_C_COMPILER} -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
       DEPENDS ${name}.bc
       )
    add_executable(${name} ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${name}.c)
@@ -44,7 +44,7 @@ function(p1_simple_test name class)
       )
    add_custom_command(
       OUTPUT ${name}.bc.o
-      COMMAND clang-11 -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
+      COMMAND ${CMAKE_C_COMPILER} -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
       DEPENDS ${name}.bc
       )
    add_executable(${name} ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${name}.c)
@@ -62,6 +62,8 @@ p1_simple_test(test_6 466)
 p1_simple_test(test_7 466)
 p1_simple_test(test_8 466)
 p1_simple_test(test_15 466)
+p1_simple_test(slice 466)
+
 
 p1_simple_test(test_9 566)
 p1_simple_test(test_10 566)
@@ -71,9 +73,12 @@ p1_simple_test(test_13 566)
 p1_simple_test(test_14 566)
 p1_simple_test(test_16 566)
 p1_simple_test(test_17 566)
+p1_simple_test(test_18 566)
+p1_simple_test(test_19 566)
 p1_simple_test(flip 566)
 p1_simple_test(syndrome_ecc 566)
 p1_simple_test(into_ecc 566)
+p1_simple_test(flags 566)
 
 
 

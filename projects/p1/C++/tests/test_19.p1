@@ -1,0 +1,6 @@
+in reg
+slice top[16]:16,bottom[16]:0
+slice hi[8]:8, lo[8]:0
+final {reg.bottom.lo, reg.bottom.hi, reg.top.lo, reg.top.hi}
+
+// This is an example of endian conversion.

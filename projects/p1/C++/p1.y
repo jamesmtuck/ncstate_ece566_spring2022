@@ -46,12 +46,13 @@ IRBuilder<> Builder(TheContext);
 
 %type <params_list> params_list
 
-%token IN FINAL
+%token IN FINAL SLICE
 %token ERROR
 %token NUMBER
 %token ID 
 %token BINV INV PLUS MINUS XOR AND OR MUL DIV MOD
 %token COMMA ENDLINE ASSIGN LBRACKET RBRACKET LPAREN RPAREN NONE COLON
+%token LBRACE RBRACE DOT
 %token REDUCE EXPAND
 
 %precedence BINV
@@ -123,15 +124,12 @@ params_list: ID
 }
 ;
 
-final: FINAL ensemble endline_opt
+final: FINAL expr ENDLINE
 {
   // FIX ME, ALWAYS RETURNS 0
   Builder.CreateRet(Builder.getInt32(0));
 }
 ;
-
-endline_opt: %empty | ENDLINE;
-            
 
 statements_opt: %empty
             | statements;
@@ -140,20 +138,21 @@ statements:   statement
             | statements statement 
 ;
 
-statement: ID ASSIGN ensemble ENDLINE
-| ID NUMBER ASSIGN ensemble ENDLINE
-| ID LBRACKET ensemble RBRACKET ASSIGN ensemble ENDLINE
+statement: bitslice_lhs ASSIGN expr ENDLINE
+| SLICE field_list ENDLINE
 ;
 
-ensemble:  expr
-| expr COLON NUMBER                  // 566 only
-| ensemble COMMA expr
-| ensemble COMMA expr COLON NUMBER   // 566 only
+field_list : field_list COMMA field
+           | field
 ;
 
-expr:   ID
-| ID NUMBER
-| NUMBER
+field : ID COLON expr
+| ID LBRACKET expr RBRACKET COLON expr
+// 566 only below
+| ID
+;
+
+expr: bitslice
 | expr PLUS expr
 | expr MINUS expr
 | expr XOR expr
@@ -164,15 +163,38 @@ expr:   ID
 | expr MUL expr
 | expr DIV expr
 | expr MOD expr
-| ID LBRACKET ensemble RBRACKET
-| LPAREN ensemble RPAREN
 /* 566 only */
-| LPAREN ensemble RPAREN LBRACKET ensemble RBRACKET
-| REDUCE AND LPAREN ensemble RPAREN
-| REDUCE OR LPAREN ensemble RPAREN
-| REDUCE XOR LPAREN ensemble RPAREN
-| REDUCE PLUS LPAREN ensemble RPAREN
-| EXPAND  LPAREN ensemble RPAREN
+| REDUCE AND LPAREN expr RPAREN
+| REDUCE OR LPAREN expr RPAREN
+| REDUCE XOR LPAREN expr RPAREN
+| REDUCE PLUS LPAREN expr RPAREN
+| EXPAND LPAREN expr RPAREN
+;
+
+bitslice: ID
+| NUMBER
+| bitslice_list
+| LPAREN expr RPAREN
+| bitslice NUMBER
+| bitslice DOT ID
+// 566 only
+| bitslice LBRACKET expr RBRACKET
+| bitslice LBRACKET expr COLON expr RBRACKET
+;
+
+bitslice_list: LBRACE bitslice_list_helper RBRACE
+;
+
+bitslice_list_helper:  bitslice
+| bitslice_list_helper COMMA bitslice
+;
+
+bitslice_lhs: ID
+| bitslice_lhs NUMBER
+| bitslice_lhs DOT ID
+// 566 only
+| bitslice_lhs LBRACKET expr RBRACKET
+| bitslice_lhs LBRACKET expr COLON expr RBRACKET
 ;
 
 %%

@@ -1,5 +1,6 @@
 in none
-a = 1
+a = 3
 b = 1
 c = 1
-final a,b,c
+final {a,b,c}
+
