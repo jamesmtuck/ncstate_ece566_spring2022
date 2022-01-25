@@ -55,14 +55,14 @@ LLVMBuilderRef  Builder;
 
 %type <params_list> params_list
 
-%token IN FINAL
+%token IN FINAL SLICE
 %token ERROR
 %token NUMBER
 %token ID 
 %token BINV INV PLUS MINUS XOR AND OR MUL DIV MOD
 %token COMMA ENDLINE ASSIGN LBRACKET RBRACKET
 %token LPAREN RPAREN NONE COLON DOT
-%token REDUCE EXPAND
+%token REDUCE EXPAND LBRACE RBRACE
 
 %precedence BINV
 %precedence INV
@@ -139,7 +139,7 @@ params_list: ID
 }
 ;
 
-final: FINAL ensemble ENDLINE
+final: FINAL expr ENDLINE
 {
   // FIX ME, ALWAYS RETURNS 0
   LLVMBuildRet(Builder,LLVMConstInt(LLVMInt32Type(),0,0));

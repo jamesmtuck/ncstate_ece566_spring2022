@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 #include "llvm-c/Core.h"
 #include "llvm-c/BitReader.h"
