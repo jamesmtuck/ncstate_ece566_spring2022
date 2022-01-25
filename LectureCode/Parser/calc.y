@@ -42,12 +42,12 @@ expr :   expr PLUS expr                  { $$ = $1 + $3; }
 
 %%
 
-/* int main() */
-/* { */
-/*   yyin = stdin; */
-/*   yyparse(); */
-/*   return 0; */
-/* } */
+int main() 
+{ 
+   yyin = stdin;
+   yyparse(); 
+   return 0; 
+} 
 
 int yyerror(char *msg) {
   printf("%s",msg);

@@ -1,11 +1,11 @@
 %.ll:%.c
-	clang -emit-llvm -S -o $@ $<
+	clang-13 -emit-llvm -S -o $@ $<
 
 %.ll:%.bc
-	llvm-dis $<
+	llvm-dis-13 $<
 
 %:%.ll
-	clang -o $@ $<
+	clang-13 -o $@ $<
 
 
 TESTS = test

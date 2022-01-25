@@ -4,6 +4,7 @@
 #include "calc.y.h"
 %}
 
+%option noyywrap
 
 %%
 
