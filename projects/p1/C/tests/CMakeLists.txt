@@ -44,7 +44,7 @@ function(p1_simple_test name class)
       )
    add_custom_command(
       OUTPUT ${name}.bc.o
-      COMMAND ${CMAKE_C_COMPILER} -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
+      COMMAND clang-13 -c -o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc
       DEPENDS ${name}.bc
       )
    add_executable(${name} ${CMAKE_CURRENT_BINARY_DIR}/${name}.bc.o ${name}.c)
