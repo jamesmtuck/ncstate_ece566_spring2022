@@ -27,7 +27,7 @@ ADD_FLEX_BISON_DEPENDENCY(Scanner Parser)
 include_directories(.)
 
 add_executable(p1 p1.cpp ${BISON_Parser_OUTPUTS} ${FLEX_Scanner_OUTPUTS})
-target_link_libraries(p1 y l ${llvm_libs})
+target_link_libraries(p1 y ${llvm_libs})
 
 
 enable_testing()
