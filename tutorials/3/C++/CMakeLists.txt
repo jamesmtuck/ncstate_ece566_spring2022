@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project("tutorial5")
+project("tutorial3")
 
 set(CMAKE_CXX_STANDARD 14)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
