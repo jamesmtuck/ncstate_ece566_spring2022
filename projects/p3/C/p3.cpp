@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
     std::string ErrorInfo;
     std::error_code EC;
     Out.reset(new ToolOutputFile(OutputFilename.c_str(), EC,
-                                 sys::fs::F_None));
+                                 sys::fs::OF_None));
 
     EnableStatistics();
 
